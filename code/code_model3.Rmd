@@ -1,0 +1,66 @@
+---
+title: "NYC Opportunity Assessment"
+author: "Camilla Zhang"
+date: "2023-01-12"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+# Load data #
+df = read.csv("/Users/jayzee/Documents/nyc_opportunity_assessment/data/renters_data_ct.csv")
+```
+
+```{r}
+# Import Libraries #
+#install.packages("estimatr")
+library(estimatr)
+#install.packages("outliers")
+library(outliers)
+```
+
+```{r}
+#Rename columns
+colnames(df)[5] = "median_rooms" #rename median rooms
+colnames(df)[6] = "no_plumbing" #Rename lacking plumbing facilities
+colnames(df)[7] = "no_kitchen" #Rename lacking kitchen
+
+#lowercase all column names
+names(df) <- tolower(names(df))
+```
+
+
+###Conduct Grubbs test to check for outliers (lower p-value shows that the lowest/highest values are outliers (alternative hypothesis))
+```{r}
+# Race/ethnicity tests
+grubbs.test(df$asian)
+grubbs.test(df$black.or.african.american)
+grubbs.test(df$hispanic.or.latino.origin)
+
+#Education tests
+grubbs.test(df$less.than.high.school.graduate)
+grubbs.test(df$high.school.graduate..includes.equivalency.)
+```
+# Robust Clustered SE Regression
+```{r}
+robust_lm <- estimatr::lm_robust(
+  evictions ~ 
+    borough +
+    median_rooms +
+    no_plumbing + 
+    asian + 
+    black.or.african.american + 
+    white.alone..not.hispanic.or.latino + 
+    hispanic.or.latino.origin + 
+    less.than.high.school.graduate + 
+    high.school.graduate..includes.equivalency. + 
+    some.college.or.associate.s.degree + 
+    moved.in.2019.or.later +
+    moved.in.2015.to.2018,
+  data = df,
+  se_type = "HC0"
+)
+summary(robust_lm)
+```
+
