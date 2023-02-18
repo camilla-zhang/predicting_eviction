@@ -47,6 +47,7 @@ Code Boundaries shapefile from NYC Open Data to display the density of residenti
 ZIP code. Due to the abnormality of ZIP code shapes in NYC, I set the spatial matrix to Queen’s.
 From there, I analyze spatial dependence with the Moran’s I statistic, then run a Local Univariate
 Moran’s I clustering analysis to detect any areas with clusters of spatial correlation.
+
   For the second analysis, I identify which factors can determine the outcome of an
 eviction case by running a logistic regression model on 1,039,894 cases, and do so in the
 following manner. I first define my target variable as the court outcome. The data for this comes
@@ -84,6 +85,7 @@ between eviction cases and certain population variables. Additionally, I became 
 the presence of outliers after conducting Grubbs tests on several feature variables. Thus, as a
 robustness measure, I include an additional robust regression model with Huber-White clustered
 standard errors in R and results that resonate with the previous models.
+
   One limitation pertaining to our second analysis was how the pandemic has impacted
 eviction. While this is out of the scope of this analysis, I encourage scholars to consider studying
 how the pandemic has changed the dynamics of eviction and how it affected different groups of
@@ -91,6 +93,7 @@ people differently. While this research analyzes spatial autocorrelation of hous
 could consider going a step further and conducting spatial lag or error models to control for the
 spatial autocorrelation that was found when determining what factors indicate high likelihood of
 eviction.
+
   Another shortcoming for our study is that I did not analyze the demographics of the
 evicted persons due to the ethical concerns of individual characteristics being tied to eviction
 cases. I attempt to navigate around this by investigating the relationship between eviction cases
@@ -98,11 +101,13 @@ and renter population characteristics and do so at various areal units. However,
 entirely confident that the renters described by the level of eviction cases is exactly reflective of
 the individual tied to each case. Nonetheless, we can be more careful about assuming the
 relationship and still use the information as a tool to help craft a tenant outreach plan.
+
   Our models and maps analyze the eviction and demographic rates and counts rather than
 eviction rates. Although in many cases it is more beneficial to use rate for a more normal
 distribution, we preserve the raw count of our data because many of our feature variables were
 initially presented in counts, some of which were unable to be converted to rates. We encourage
 scholars to study this matter further, using rates rather than counts.
+
   Lastly, while this study analyzes the spatial relationship between two significant
 indicators - Black population and location - it does not go further to investigate the interaction
 effects between each indicator, such as race and education or tenant duration and median rental
