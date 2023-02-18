@@ -24,7 +24,7 @@ important findings, it is recommended that city policymakers prioritize the loca
 to neighborhoods in the Bronx and West Brooklyn. In terms of individual characteristics, I urge
 them to work more with members of the Black and Latinx communities, adults nearing
 retirement, and those who have not completed their college program.
-![image](https://github.com/camilla-zhang/predicting_eviction/blob/main/figures/choropleth_maps.png)
+![image](https://github.com/camilla-zhang/predicting_eviction/blob/main/figures/choropleth_maps2.png)
 
 ### Problem
   While some New Yorkers have trouble finding housing as a result of the rise in rent
