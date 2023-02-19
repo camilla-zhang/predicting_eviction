@@ -74,7 +74,7 @@ receiving judgment. For my feature variables, I take the same renter characteris
 at the census tract level. Furthermore, I add features regarding the conditions of occupied houses
 from the 2021 Census Bureau’s selected housing characteristics, including the number of rooms
 and type of in-home facilities. To obtain my target variable - the raw number of eviction cases - I
-use the ![NYC Open Data’s Eviction Data](https://data.cityofnewyork.us/City-Government/Evictions/6z8x-wfk4). Finally, I merge the target data with my feature data
+use the [NYC Open Data’s Eviction Data](https://data.cityofnewyork.us/City-Government/Evictions/6z8x-wfk4). Finally, I merge the target data with my feature data
 and find results strongly consistent with the previous regression model in terms of demographic
 relationships.
 
